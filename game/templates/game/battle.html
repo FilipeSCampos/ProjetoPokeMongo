@@ -1,0 +1,20 @@
+<!-- game/templates/game/battle.html -->
+
+{% extends 'game/base.html' %}
+
+{% block content %}
+    <h2>Selecione seus Pokémons para a Batalha</h2>
+    <form method="POST" action="{% url 'initiate_battle' %}">
+        {% csrf_token %}
+        <div class="pokemon-selection">
+            {% for pokemon in pokemons %}
+                <div class="pokemon-card">
+                    <img src="{% static 'game/images/' %}{{ pokemon.nome|lower }}.png" alt="{{ pokemon.nome }}" width="100">
+                    <p>{{ pokemon.nome }}</p>
+                    <input type="checkbox" name="pokemon_ids" value="{{ pokemon.id }}">
+                </div>
+            {% endfor %}
+        </div>
+        <button type="submit">Iniciar Batalha</button>
+    </form>
+{% endblock %}

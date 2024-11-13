@@ -1,0 +1,43 @@
+<!-- game/templates/game/base.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokémon Battle</title>
+    <link rel="stylesheet" href="{% static 'game/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Pokémon Battle</h1>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'battle_page' %}">Batalha</a></li>
+                    <li><a href="{% url 'leaderboard_page' %}">Leaderboard</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login_page' %}">Login</a></li>
+                    <li><a href="{% url 'register_page' %}">Cadastrar</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pokémon Battle. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

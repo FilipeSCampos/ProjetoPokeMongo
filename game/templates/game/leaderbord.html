@@ -1,0 +1,25 @@
+<!-- game/templates/game/leaderboard.html -->
+
+{% extends 'game/base.html' %}
+
+{% block content %}
+    <h2>Leaderboard</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Posição</th>
+                <th>Treinador</th>
+                <th>Pontos</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in leaderboard %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ entry.nome_usuario }}</td>
+                    <td>{{ entry.total_pontos }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,148 @@
+/* game/static/game/css/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffcb05;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #3b4cca;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #3b4cca;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #3b4cca;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2a37a1;
+}
+
+.pokemon-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pokemon-card {
+    border: 1px solid #3b4cca;
+    padding: 10px;
+    text-align: center;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.pokemon-card img {
+    border-radius: 50%;
+}
+
+.battlefield {
+    display: flex;
+    justify-content: space-between;
+}
+
+.battlefield .player, .battlefield .npc {
+    width: 45%;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.battle-log {
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: scroll;
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.battle-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #c8e6c9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #3b4cca;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.messages {
+    list-style-type: none;
+    padding: 0;
+}
+
+.messages li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.messages li.error {
+    background-color: #ffcccc;
+    color: #cc0000;
+}
+
+.messages li.success {
+    background-color: #ccffcc;
+    color: #006600;
+}

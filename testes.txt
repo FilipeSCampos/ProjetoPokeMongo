@@ -1,0 +1,11 @@
+token misty: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzNmMTlkOTI1ODAxOThiMDg1ZTliNCIsIm5vbWVfdXN1YXJpbyI6Ik1pc3R5V2F0ZXJmbG93ZXIiLCJleHAiOjE3MzE1NDM4MzcsImlhdCI6MTczMTQ1NzQzN30.Bg89Mt06FqN5A_i-o6rVn9_H0NxsDhMiz9dqlP-47vQ
+
+token ash: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzNlZGQzNmUzZDE0Yjc1ZGExZDI0YiIsIm5vbWVfdXN1YXJpbyI6IkFzaEtldGNodW0iLCJleHAiOjE3MzE1NDM5MjEsImlhdCI6MTczMTQ1NzUyMX0.orinnJ8FMysvyVcTs4Kc_qbdb0Vq_gi6hXLRx-tiKio
+
+
+{
+    "treinador1_id": "6733edd36e3d14b75da1d24b",
+    "treinador2_id": "6733f19d92580198b085e9b4",
+    "pokemon1_id": "6733e4a0465dcf5f94c31fea",
+    "pokemon2_id": "6733e4e531b6be4fbf2fd24f"
+}

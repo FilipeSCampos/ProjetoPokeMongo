@@ -1,0 +1,57 @@
+<!-- game/templates/game/perform_attack.html -->
+
+{% extends 'game/base.html' %}
+
+{% block content %}
+    <h2>Batalha Pokémon</h2>
+    <div class="battlefield">
+        <div class="player">
+            <h3>Seu Time</h3>
+            {% for pokemon in player_pokemons %}
+                <div class="pokemon">
+                    <img src="{% static 'game/images/' %}{{ pokemon.nome|lower }}.png" alt="{{ pokemon.nome }}" width="100">
+                    <p>{{ pokemon.nome }} - HP: {{ pokemon.status.HP }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="npc">
+            <h3>Time do NPC</h3>
+            {% for pokemon in npc_pokemons %}
+                <div class="pokemon">
+                    <img src="{% static 'game/images/' %}{{ pokemon.nome|lower }}.png" alt="{{ pokemon.nome }}" width="100">
+                    <p>{{ pokemon.nome }} - HP: {{ pokemon.status.HP }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="actions">
+        <h3>Escolha um Ataque:</h3>
+        <form method="POST" action="{% url 'perform_attack' %}">
+            {% csrf_token %}
+            <select name="ataque_nome" required>
+                <option value="">Selecione um ataque</option>
+                {% for ataque in available_attacks %}
+                    <option value="{{ ataque.nome }}">{{ ataque.nome }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Atacar</button>
+        </form>
+    </div>
+
+    <div class="battle-log">
+        <h3>Log da Batalha:</h3>
+        <ul>
+            {% for log in battle_logs %}
+                <li>{{ log }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% if battle_result %}
+        <div class="battle-result">
+            <h2>{{ battle_result }}</h2>
+            <a href="{% url 'leaderboard_page' %}">Ver Leaderboard</a>
+        </div>
+    {% endif %}
+{% endblock %}
